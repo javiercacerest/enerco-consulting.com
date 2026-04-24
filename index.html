@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENERCO Consulting — Energía Renovable en Centroamérica</title>
+  <meta name="description" content="Consultoría especializada en energías renovables, agrivoltaica y finanzas climáticas para Centroamérica. Más de 10 años de experiencia en El Salvador." />
+  <meta name="keywords" content="energía renovable, solar, agrivoltaica, El Salvador, consultoría energética, finanzas verdes" />
+  <meta property="og:title" content="ENERCO Consulting" />
+  <meta property="og:description" content="Consultoría en energías renovables y finanzas climáticas para Centroamérica." />
+  <meta property="og:url" content="https://enerco-consulting.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #085041;
+      --green-mid:    #0F6E56;
+      --green-light:  #1D9E75;
+      --green-pale:   #E1F5EE;
+      --green-text:   #04342C;
+      --off-white:    #F9F8F5;
+      --white:        #FFFFFF;
+      --border:       rgba(0,0,0,0.10);
+      --text-primary: #1A1A18;
+      --text-muted:   #6B6B67;
+      --text-light:   #9A9A96;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green-mid);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green-mid); }
+
+    .nav-cta {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid var(--green-mid);
+      color: var(--green-mid);
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-mid);
+      color: var(--white);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 6rem 2rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-mid);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      max-width: 440px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      background: var(--green-mid);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--green-dark); }
+
+    .btn-ghost {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--green-mid); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-card {
+      background: var(--off-white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .hero-card-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .hero-card-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--green-mid);
+      line-height: 1;
+    }
+
+    .hero-card-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .hero-cards-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--green-dark);
+      padding: 2rem;
+    }
+
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+      border-right: 0.5px solid rgba(255,255,255,0.15);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green-pale);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--green-mid);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 540px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── SERVICES ── */
+    #servicios { background: var(--off-white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--green-light);
+      box-shadow: 0 4px 24px rgba(15,110,86,0.08);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--green-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--green-mid);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .service-detail {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .service-detail ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .service-detail li {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .service-detail li::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green-light);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .project-header {
+      background: var(--green-pale);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-year {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--green-mid);
+      font-weight: 500;
+    }
+
+    .project-tag {
+      font-size: 10px;
+      padding: 4px 10px;
+      background: var(--white);
+      color: var(--green-dark);
+      border-radius: 99px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .project-body {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .project-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .project-client {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .project-scope {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    #sobre { background: var(--off-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      background: var(--green-pale);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .about-initials {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .about-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .about-role {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .credential {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .credential-icon {
+      color: var(--green-mid);
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ── BLOG ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .blog-card:hover { border-color: var(--green-light); }
+
+    .blog-category {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .blog-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .blog-excerpt {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .blog-meta {
+      font-size: 11px;
+      color: var(--text-light);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .blog-coming {
+      background: var(--off-white);
+      border: 0.5px dashed var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .blog-coming p {
+      font-size: 13px;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* ── CONTACT ── */
+    #contacto { background: var(--green-dark); }
+
+    #contacto .section-title { color: var(--white); }
+
+    #contacto .section-tag { color: var(--green-pale); }
+    #contacto .section-tag::before { background: var(--green-pale); }
+
+    #contacto .section-sub { color: rgba(255,255,255,0.55); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-item-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--green-pale);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+    }
+
+    .contact-item-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 3px;
+    }
+
+    .contact-item-value {
+      font-size: 14px;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--green-light);
+    }
+
+    .contact-form select option {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--green-pale);
+      color: var(--green-dark);
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-form .btn-submit:hover {
+      background: var(--white);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-text);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green-pale);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover { color: var(--green-pale); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 0.5px solid var(--border);
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+      }
+
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem; }
+      .hero-visual { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.15); }
+      .stat:nth-child(odd) { border-right: 0.5px solid rgba(255,255,255,0.15); }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 3rem 1.25rem; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--green-mid);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="main-nav">
+    <a href="#" class="logo">ENERCO<span>Consulting · El Salvador</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre">Nosotros</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+    <button class="nav-toggle" aria-label="Menú" onclick="document.getElementById('main-nav').classList.toggle('nav-open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <div style="background: var(--white); border-bottom: 0.5px solid var(--border);">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">Energía renovable · Centroamérica</div>
+        <h1>Soluciones de<br><em>ingeniería verde</em><br>para Centroamérica</h1>
+        <p class="hero-sub">Consultoría especializada en energías renovables, agrivoltaica y finanzas climáticas. Más de 10 años de experiencia en El Salvador con organismos internacionales, empresas e instituciones públicas.</p>
+        <div class="hero-actions">
+          <a href="#servicios" class="btn-primary">Ver servicios</a>
+          <a href="#contacto" class="btn-ghost">Hablar con un experto →</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card" style="margin-bottom: 0;">
+          <div class="hero-card-label">Experiencia sectorial</div>
+          <div class="hero-card-value">10+</div>
+          <div class="hero-card-sub">años en energía renovable en El Salvador</div>
+        </div>
+        <div class="hero-cards-row" style="margin-top: 12px;">
+          <div class="hero-card">
+            <div class="hero-card-label">Matriz renovable ES</div>
+            <div class="hero-card-value" style="font-size: 22px;">56.9%</div>
+            <div class="hero-card-sub">al 2025</div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-label">Proyectos solar</div>
+            <div class="hero-card-value" style="font-size: 22px;">241 MW</div>
+            <div class="hero-card-sub">analizados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Años de experiencia en el sector</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">AFD · BID</div>
+        <div class="stat-label">Organismos internacionales</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">56.9%</div>
+        <div class="stat-label">Matriz renovable en El Salvador</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">CEL · SIGET</div>
+        <div class="stat-label">Instituciones con las que trabajamos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="servicios">
+    <div class="section-inner">
+      <div class="section-tag">Servicios</div>
+      <h2 class="section-title">¿En qué podemos ayudarte?</h2>
+      <p class="section-sub">Ofrecemos consultoría técnica especializada en cuatro ejes estratégicos, alineados con los objetivos de descarbonización y financiamiento climático de la región.</p>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <div class="service-title">Diseño y factibilidad fotovoltaica</div>
+          <div class="service-desc">Estudios de factibilidad técnica y económica, diseño de sistemas solares desde pequeña escala hasta proyectos utility-scale, análisis con Helioscope y comparativas de tecnología.</div>
+          <div class="service-detail">
+            <ul>
+              <li>Dimensionamiento y diseño de sistemas FV</li>
+              <li>Análisis de sombreado e irradiación</li>
+              <li>Comparativas de inversores (SMA, Huawei, Fronius)</li>
+              <li>Evaluación financiera y retorno de inversión</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <div class="service-title">Agrivoltaica (Agri-PV)</div>
+          <div class="service-desc">Integración de sistemas solares en contextos agrícolas y agropecuarios. Especialización en la región Apaneca-Ilamatepec y cooperativas cafetaleras de CONFRAS.</div>
+          <div class="service-detail">
+            <ul>
+              <li>Evaluación de sitios y cultivos compatibles</li>
+              <li>Diseño de configuraciones duales</li>
+              <li>Análisis de impacto en productividad agrícola</li>
+              <li>Coordinación con comunidades rurales</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="service-title">Finanzas verdes y taxonomía sostenible</div>
+          <div class="service-desc">Apoyo para acceder a mecanismos de financiamiento climático (AFD, BID, BCIE) y estructuración de proyectos bancables bajo marcos de taxonomía sostenible.</div>
+          <div class="service-detail">
+            <ul>
+              <li>Diagnóstico de elegibilidad para fondos verdes</li>
+              <li>Preparación de documentación técnica</li>
+              <li>Aplicación de taxonomía UE / LFUER (Decreto 436)</li>
+              <li>Coordinación con DGEHM, SIGET y BCIE</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="service-title">Auditorías y eficiencia energética</div>
+          <div class="service-desc">Diagnósticos de consumo, identificación de oportunidades de eficiencia y gestión energética para industria, agroindustria, instituciones educativas y sector público.</div>
+          <div class="service-detail">
+            <ul>
+              <li>Levantamiento de datos y monitoreo IoT</li>
+              <li>Análisis de facturación eléctrica (CAESS)</li>
+              <li>Identificación de medidas de ahorro</li>
+              <li>Reportes técnicos y planes de acción</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="proyectos" style="background: var(--white);">
+    <div class="section-inner">
+      <div class="section-tag">Proyectos</div>
+      <h2 class="section-title">Experiencia demostrable</h2>
+      <p class="section-sub">Proyectos reales con organismos internacionales, sector privado e instituciones públicas en El Salvador y Centroamérica.</p>
+      <div class="portfolio-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-year">2026</span>
+            <span class="project-tag">Agri-PV · Finanzas</span>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Consultoría "Green Investment" — Expertise France / AFD</div>
+            <div class="project-client">Unión Europea · El Salvador</div>
+            <p class="project-scope">Análisis del marco regulatorio energético, mapeo del ecosistema de inversión verde y evaluación de condiciones agrivoltaicas en la región cafetalera de Apaneca-Ilamatepec. Coordinación con DGEHM, NEOEN, CONFRAS y BCIE.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-year">2026</span>
+            <span class="project-tag">Diseño Solar</span>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Diseño 2.2 MWp rooftop — Comparativa SMA vs. Huawei</div>
+            <div class="project-client">Sector privado · El Salvador</div>
+            <p class="project-scope">Diseño completo de instalación fotovoltaica en techo para proyecto industrial. Análisis comparativo de tecnología de inversores y modelado energético con Helioscope.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-year">2023</span>
+            <span class="project-tag">Biogas</span>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Planta de biogás — Río Acelhuate</div>
+            <div class="project-client">CEL · El Salvador (con FICHTNER)</div>
+            <p class="project-scope">Participación en el diseño y evaluación de planta de biogás en el río Acelhuate. Coordinación técnica con consultora alemana FICHTNER para evaluación de recursos y viabilidad energética.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-initials">JC</div>
+          <div class="about-name">Javier Cáceres</div>
+          <div class="about-role">Director · Ingeniero Mecánico</div>
+          <div class="about-credentials">
+            <div class="credential">
+              <span class="credential-icon">◆</span>
+              <span>Ingeniero Mecánico — UCA El Salvador (2015)</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">◆</span>
+              <span>Máster en Energías Renovables — EUDE Business School (2021)</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">◆</span>
+              <span>9 años en CEL — Comisión Ejecutiva Hidroeléctrica del Río Lempa</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">◆</span>
+              <span>Consultor Expertise France / AFD — Programa Green Investment EU</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-tag">Nosotros</div>
+          <h2 class="section-title">Experiencia institucional al servicio de tu proyecto</h2>
+          <p>ENERCO es una firma de consultoría salvadoreña especializada en energías renovables, fundada por Javier Cáceres, ingeniero mecánico con más de 10 años de experiencia en el sector energético de El Salvador.</p>
+          <p>Nuestra trayectoria incluye nueve años en CEL (Comisión Ejecutiva Hidroeléctrica del Río Lempa), donde desarrollamos proyectos de energía solar, biogás y eficiencia energética a nivel nacional. Este conocimiento institucional profundo nos permite navegar el marco regulatorio salvadoreño (DGEHM, SIGET, LFUER) con precisión y eficiencia.</p>
+          <p>Combinamos rigor técnico con visión estratégica para conectar proyectos de energía limpia con mecanismos de financiamiento internacional, desde la AFD y el BID hasta el BCIE.</p>
+          <div style="margin-top: 1.75rem;">
+            <a href="#contacto" class="btn-primary">Trabajar con nosotros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" style="background: var(--white);">
+    <div class="section-inner">
+      <div class="section-tag">Blog</div>
+      <h2 class="section-title">Análisis y perspectivas</h2>
+      <p class="section-sub">Artículos técnicos sobre energía renovable, agrivoltaica y financiamiento climático en Centroamérica.</p>
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-category">Agrivoltaica</div>
+          <div class="blog-title">El Salvador y la agrivoltaica: oportunidades en la región cafetalera de Apaneca</div>
+          <div class="blog-excerpt">Análisis del potencial de los sistemas Agri-PV en cooperativas de la región de Apaneca-Ilamatepec y el rol de CONFRAS como actor clave.</div>
+          <div class="blog-meta">
+            <span>Javier Cáceres</span>
+            <span>Próximamente</span>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-category">Finanzas verdes</div>
+          <div class="blog-title">LFUER Decreto 436: lo que cambia para los proyectos de energía renovable en El Salvador</div>
+          <div class="blog-excerpt">Análisis del nuevo marco regulatorio de octubre 2025 y su impacto en el acceso a financiamiento climático para proyectos FV y de biogás.</div>
+          <div class="blog-meta">
+            <span>Javier Cáceres</span>
+            <span>Próximamente</span>
+          </div>
+        </div>
+
+        <div class="blog-coming">
+          <p>Más artículos en preparación.<br>Seguinos para ser el primero en leerlos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <div class="section-tag">Contacto</div>
+          <h2 class="section-title">Hablemos de tu proyecto</h2>
+          <p class="section-sub">¿Tenés un proyecto de energía renovable, necesitás análisis técnico o querés explorar opciones de financiamiento verde?</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Correo</div>
+                <div class="contact-item-value">javiercacerest28@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">WhatsApp</div>
+                <div class="contact-item-value">+503 7318-7171</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Web</div>
+                <div class="contact-item-value">enerco-consulting.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Ubicación</div>
+                <div class="contact-item-value">San Salvador, El Salvador</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Nombre completo" required />
+            <input type="email" placeholder="Correo electrónico" required />
+          </div>
+          <input type="text" placeholder="Empresa u organización (opcional)" />
+          <select required>
+            <option value="" disabled selected>Tipo de consultoría</option>
+            <option>Diseño fotovoltaico</option>
+            <option>Agrivoltaica (Agri-PV)</option>
+            <option>Finanzas verdes / Taxonomía sostenible</option>
+            <option>Auditoría energética</option>
+            <option>Otro</option>
+          </select>
+          <textarea placeholder="Describe brevemente tu proyecto o consulta..."></textarea>
+          <button type="submit" class="btn-submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">ENERCO</span>
+    <ul class="footer-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 ENERCO S.A.S. de C.V. — San Salvador, El Salvador</span>
+  </footer>
+
+  <div class="toast" id="toast">Mensaje enviado. Te contactamos pronto.</div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+      e.target.reset();
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('main-nav').classList.remove('nav-open');
+      });
+    });
+  </script>
+
+</body>
+</html>
